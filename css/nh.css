@@ -1,0 +1,473 @@
+:root {
+	--main-orange: #efa504;
+	--main-text-color: #777;
+	--text-push-left: -9999px;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	align-items: center;
+	color: #000000;
+	background-color: #fff;
+	display: flex;
+	flex-flow: column nowrap;
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: normal;
+	margin: 1px auto;
+	width: 748px;
+}
+
+a {
+	color: #fff;
+}
+
+blockquote {
+	display: block;
+	font-style: italic;
+	margin: 18px 0;
+}
+
+ol.nonumber {
+	list-style: outside none;
+}
+ul.nobullet {
+	list-style: outside none;
+}
+
+
+/* HEADERS */
+h1 {
+	background: url("/images/hymnal-logo-small.gif") 0px 0px no-repeat;
+	height: 81px;
+	margin-bottom: 20px;
+	overflow: hidden;
+	text-indent: var(--text-push-left);
+	width: 200px;
+}
+h1 a {
+	display: block;
+	height: 100%;
+	width: 100%;
+}
+.homepage h1 {
+	background: url("/images/hymnal-logo-big.gif") 0px 0px no-repeat;
+	height: 147px;
+	width: 430px;
+}
+
+
+/* FILMSTRIP */
+#navigation {
+	background-image: 
+		url("/images/filmstrip/anncar.jpg"), 
+		url("/images/filmstrip/atsea.jpg"), 
+		url("/images/filmstrip/fatherson.jpg"), 
+		url("/images/filmstrip/flower.jpg"), 
+		url("/images/filmstrip/laff.jpg"), 
+		url("/images/filmstrip/oceangreen.jpg"), 
+		url("/images/filmstrip/picnic.jpg");
+	background-repeat: no-repeat;
+	background-position: 
+		0 bottom, 
+		108px bottom, 
+		216px bottom, 
+		324px bottom, 
+		432px bottom, 
+		540px bottom, 
+		648px bottom;
+	padding-bottom: 67px;
+	margin-bottom: 4px;
+	width: 100%;
+}
+
+
+/* MAIN NAVIGATION */
+#navigation ul {
+	display: flex;
+	justify-content: space-between;
+	list-style: outside none;
+}
+#navigation ul li {
+	background: url("/images/nav_bullet.gif") 0px 2px no-repeat;
+	padding-left: 23px;
+}
+#navigation ul li:first-child {
+	padding-left: 0;
+}
+#navigation ul li a {
+	background-position: 0px 0px;
+	background-repeat: no-repeat;
+	display: inline-block;
+	height: 21px;
+	overflow: hidden;
+	text-indent: var(--text-push-left);
+}
+#navigation ul li span {
+	display: block;
+	height: 21px;
+	overflow: hidden;
+	text-indent: var(--text-push-left);
+}
+#nav1 span {
+	background: url("/images/nav_opera.png") -101px 0px no-repeat;
+	width: 101px;
+}
+#nav1 a {
+	background-image: url("/images/nav_opera.png");
+	width: 101px;
+}
+#nav1 a:hover {
+	background-position: -101px 0px; 
+}
+#nav2 span {
+	background: url("/images/nav_recording.png") -144px 0px no-repeat;
+	width: 144px;
+}
+#nav2 a {
+	background-image: url("/images/nav_recording.png");
+	width: 144px;
+}
+#nav2 a:hover {
+	background-position: -144px 0px; 
+}
+#nav3 span {
+	background: url("/images/nav_performances.png") -147px 0px no-repeat;
+	width: 147px;
+}
+#nav3 a {
+	background-image: url("/images/nav_performances.png");
+	width: 147px;
+}
+#nav3 a:hover {
+	background-position: -147px 0px; 
+}
+#nav4 span {
+	background: url("/images/nav_credits.png") -75px 0px no-repeat;
+	width: 75px;
+}
+#nav4 a {
+	background-image: url("/images/nav_credits.png");
+	width: 75px;
+}
+#nav4 a:hover {
+	background-position: -75px 0px; 
+}
+#nav5 span {
+	background: url("/images/nav_involved.png") -125px 0px no-repeat;
+	width: 125px;
+}
+#nav5 a {
+	background-image: url("/images/nav_involved.png");
+	width: 125px;
+}
+#nav5 a:hover {
+	background-position: -125px 0px; 
+}
+
+
+/* CONTENT */
+#content {
+	background-color: var(--main-orange);
+	color: #000;
+	display: flex;
+	flex-flow: row wrap;
+	padding: 19px 0px 19px 0px;
+	width: 100%;
+}
+.homepage #content a {
+	color: var(--main-orange);
+}
+p {
+	margin: 0;
+	padding: 3px 10px 7px 0px;
+}
+.homepage #content {
+	background-color: #fff;
+	color: var(--main-text-color);
+	padding-top: 0px;
+}
+
+.left_panel {
+	margin-left: 50px;
+	width: 304px;
+}
+.right_panel {
+	margin-left: 35px;
+	width: 324px;
+}
+.single_panel {
+	margin-left: 50px;
+	width: 663px;
+}
+.postcards1 {
+	margin: 20px auto 0 auto;
+	width: 500px;
+}
+.postcards2 {
+	margin: 20px auto 0 auto;
+	width: 577px;
+}
+.postcards3 {
+	display: flex;
+	flex-flow: row wrap;
+	margin: 20px auto 0 auto;
+	width: 510px;
+}
+.postcards3 a:first-of-type {
+	width: 200px;
+}
+.postcards3 p {
+	padding: 2px 0 0 30px;
+	width: 280px;
+}
+.postcards3 h3,
+.postcards3 ul {
+	width: 100%;
+}
+
+#postcard-mimi {
+	background: url("/images/postcards/postcard-front.jpg") 0px 0px no-repeat;
+	display: block;
+	height: 333px;
+	width: 500px;
+}
+#postcard-mimi:hover {
+	background: url("/images/postcards/dec12epostcard.jpg") 0px 0px no-repeat;
+}
+
+.homepage .left_panel {
+	margin: 0;
+	width: 40%;
+}
+.homepage .right_panel {
+	margin: 0;
+	width: 60%;
+}
+
+h2 {
+	color: #fff;
+	margin-bottom: 5px;
+	overflow: hidden;
+	text-indent: var(--text-push-left);
+	width: 100%;
+}
+h2.singleline {
+	height: 19px
+}
+h2.doubleline {
+	height: 37px
+}
+h2.origins {
+	background: var(--main-orange) url("/images/title_origins_original.gif") 0px 0px no-repeat;
+	width: 250px;
+}
+h2.synopsis {
+	background: var(--main-orange) url("/images/title_synopsis.gif") 0px 0px no-repeat;
+	width: 86px;
+}
+h2.movies {
+	background: var(--main-orange) url("/images/title_movies_original.gif") 0px 0px no-repeat;
+	width: 244px;
+}
+h2.music {
+	background: var(--main-orange) url("/images/title_music.gif") 0px 0px no-repeat;
+	width: 56px;
+}
+h2.recording {
+	background: var(--main-orange) url("/images/title_therecording.gif") 0px 0px no-repeat;
+	width: 141px;
+}
+h2.pastperformances {
+	background: var(--main-orange) url("/images/title_pastperformances.gif") 0px 0px no-repeat;
+	width: 192px;
+}
+h2.originalopera {
+	background: var(--main-orange) url("/images/title_original_opera.gif") 0px 0px no-repeat;
+	width: 263px;
+}
+h2.sponsors {
+	background: var(--main-orange) url("/images/title_sponsors.gif") 0px 0px no-repeat;
+	margin-top: 14px;
+	width: 97px;
+}
+h2.talkopera {
+	background: var(--main-orange) url("/images/title_talk_opera.gif") 0px 0px no-repeat;
+	width: 269px;
+}
+h2.talkrecord {
+	background: var(--main-orange) url("/images/title_talk_record.gif") 0px 0px no-repeat;
+	width: 281px;
+}
+h2.bios {
+	background: var(--main-orange) url("/images/title_bios.gif") 0px 0px no-repeat;
+	width: 40px;
+}
+h2.presskit {
+	background: var(--main-orange) url("/images/title_presskit.gif") 0px 0px no-repeat;
+	width: 88px;
+}
+h2.postcards {
+	background: var(--main-orange) url("/images/title_postcards.gif") 0px 0px no-repeat;
+	width: 106px;
+}
+h3.creditlist, 
+h3.presslist,
+h3.postcards {
+	font-size: 10px;
+	font-weight: bold;
+}
+h3.presslist {
+	margin-bottom: 8px;
+	margin-top: 16px;
+}
+h3.postcards {
+	margin-bottom: 2px;
+	margin-top: 28px;
+}
+h3.presslist:not(:first-of-type) {
+	margin-top: 36px;
+}
+
+
+/* LOGOS */
+div.sponsors {
+	background-color: #fff;
+	border-radius: 9px;
+	padding: 6px 0 8px 0;
+}
+div.sponsors p {
+	padding: 9px;
+}
+div.sponsors a {
+	color: #000;
+}
+
+
+.homepage h2 {
+	background: var(--main-orange) url("/images/dyingdream.png") 50% 50% no-repeat;
+	color: #fff;
+	font-size: 50px;
+	height: 102px;
+	overflow: hidden;
+	text-align: center;
+	text-indent: var(--text-push-left);
+	width: 100%;
+}
+.homepage h3 {
+	background: url("/images/title_home_announcements.gif") 0px 0px no-repeat;
+	color: var(--main-orange);
+	height: 19px;
+	margin-top: 19px;
+	overflow: hidden;
+	text-indent: var(--text-push-left);
+	width: 100%;
+}
+p.creditlist {
+	padding-bottom: 0;
+}
+p.presslist {
+	padding-top: 12px;
+	text-align: left;
+}
+blockquote.presslist {
+	font-style: normal;
+}
+ul.creditlist, 
+ul.presslist,
+ul.postcards {
+	list-style: outside none;
+	margin-bottom: 14px;
+}
+ul.creditlist li, 
+ul.presslist li {
+	padding-left: 20px;
+}
+div.two_panel {
+	display: flex;
+	flex-flow: row no-wrap;
+	padding-bottom: 10px;
+	padding-right: 5px;
+}
+.two_panel p {
+	text-align: center;
+}
+.two_panel a {
+font-weight: bold;
+}
+.presslist.two_panel a {
+font-weight: normal;
+}
+.presslist.two_panel ul img {
+	padding-right: 8px;
+}
+.presslist.two_panel li {
+	margin-bottom: 16px;
+	margin-top: 8px;
+}
+.presslist.two_panel .left_panel {
+	margin-left: 0px;
+	width: 304px;
+}
+.presslist.two_panel .right_panel {
+	margin-left: 35px;
+	width: 324px;
+}
+
+
+.two_panel ol {
+margin: 0;
+padding: 0 0 0 25px;
+}
+.two_panel ol li {
+	padding-bottom: 2px;
+}
+
+.single_panel ol {
+	margin: 0;
+	padding: 0;
+}
+.single_panel ol li {
+	margin: 16px 0 22px 0;
+}
+
+#press_cdcover {
+	display: inline-block;
+	text-align: center;
+}
+#press_cdcover img {
+	display: block;
+}
+
+
+/* FOOTER */
+#footer {
+	background-color: #fff;
+	color: var(--main-text-color);
+	padding-top: 10px;
+	text-align: center;
+	width: 100%;
+}
+#footer ul {
+	color: var(--main-orange);
+	display: flex;
+	justify-content: center;
+	padding-bottom: 4px;
+}
+#footer li span {
+	color: var(--main-text-color);
+	font-weight: bold;
+}
+#footer ul li a {
+	color: var(--main-orange);
+	font-weight: bold;
+	font-size: 10px;
+	margin: 0 4px 0 0;
+}
+#footer ul li:last-child::before {
+	content:"\2022  ";
+}
