@@ -1,0 +1,12 @@
+# Setup rewriting.
+RewriteEngine On
+RewriteBase	/
+
+# This checks to make sure the connection is not already HTTPS
+#RewriteCond	%{HTTPS}	!=on
+#RewriteRule	^/?(.*)	https://%{SERVER_NAME}/$1	[R=301,L]
+# However, that only works if we're straight-up apache.
+
+# COMMENTED OUT ON LOCAL DEV ONLY
+#RewriteCond	%{HTTP_HOST}	!^www\.nitratehymnal\.net
+#RewriteRule	(.*)	https://www.nitratehymnal.net/$1	[R=301,L]
