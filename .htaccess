@@ -9,4 +9,4 @@ RewriteBase	/
 
 # COMMENTED OUT ON LOCAL DEV ONLY
 #RewriteCond	%{HTTP_HOST}	!^www\.nitratehymnal\.net
-#RewriteRule	(.*)	https://www.nitratehymnal.net/$1	[R=301,L]
+#RewriteRule	(.*)	http://www.nitratehymnal.net/$1	[R=301,L]
