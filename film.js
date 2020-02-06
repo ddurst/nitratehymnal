@@ -10,7 +10,8 @@ function addLoadEvent(func) {
     }
 }
 
-var choose = 7;
+var choose = 7,
+	breakpointWidth = 748;
 
 var aFilmstrip = new Array();
     aFilmstrip[0]  = 'anncar.jpg';
@@ -27,6 +28,16 @@ var aFilmstrip = new Array();
     aFilmstrip[11] = 'robertbroken.jpg';
     aFilmstrip[12] = 'roberthair.jpg';
     aFilmstrip[13] = 'running.jpg';
+
+
+function openNav() {
+	document.querySelector("#navigation div").classList.add("shownav");
+}
+
+
+function closeNav() {
+	document.querySelector("#navigation div").classList.remove("shownav");
+}
 
 
 function getRandomInt(i, j) {
@@ -87,10 +98,49 @@ function shuffleFilmstrip() {
 	}
 	// now create `background-image` for #navigation
 	var ruleString = '#navigation { background-image: ' + newStrips.join() + '; }';
-	var nav = document.getElementById("navigation");
 	var sheet = document.styleSheets[0];
 	var css_rules_num = sheet.cssRules.length;
 	sheet.insertRule(ruleString, css_rules_num);
+	css_rules_num += 1;
+	tweakFilmstripIf(sheet, css_rules_num);
+}
+
+
+function tweakFilmstripIf(sheet, css_rules_num) {
+	var doc = document.querySelector("html");
+	if (doc.offsetWidth <= breakpointWidth) {
+		// manually calculate the background position (ugh)
+		var doc = document.querySelector("body"),
+			spacingPercent = 0.06417,
+			imgHeightPercentage = 0.67;
+		var total = doc.offsetWidth,
+			imgSizePx = (total * (1 - spacingPercent)) / choose,
+			imgSizePercent = ((imgSizePx) / total) * 100,
+			spacer = (total * spacingPercent) / (choose - 1);
+		var newWidths = [];
+		for (var i=0; i<choose; i++) {
+			switch(i) {
+				case 0:
+					newWidths.push("0 bottom");
+					break;
+				default:
+					newWidths.push(((imgSizePx + spacer) * i).toString() + 'px bottom');
+					break;
+			}
+		}
+		// assemble and add
+		var rule_num = css_rules_num;
+		var ruleString = '#navigation { background-position: ' + newWidths.join() + '; }';
+		sheet.insertRule(ruleString, rule_num);
+		rule_num += 1;
+		// change image size the same way
+		ruleString = '#navigation { background-size: ' + imgSizePercent + '%; }';
+		sheet.insertRule(ruleString, rule_num);
+		rule_num += 1;
+		// ...and the bottom padding of the navigation.
+		ruleString = '#navigation { padding-bottom: ' + ((imgSizePx * imgHeightPercentage) + 2) + 'px; }';
+		sheet.insertRule(ruleString, rule_num);
+	}
 }
 
 

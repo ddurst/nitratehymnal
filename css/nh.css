@@ -2,11 +2,22 @@
 	--main-orange: #efa504;
 	--main-text-color: #777;
 	--text-push-left: -9999px;
+	--body-width: 748px;
+}
+
+/* REMOVE ME */
+.alert {
+	background-color: #f00 !important;
 }
 
 * {
 	margin: 0;
 	padding: 0;
+}
+
+a.closenav,
+a.opennav {
+	display: none;
 }
 
 body {
@@ -19,7 +30,7 @@ body {
 	font-size: 10px;
 	font-weight: normal;
 	margin: 1px auto;
-	width: 748px;
+	width: var(--body-width);
 }
 
 a {
@@ -71,7 +82,6 @@ h1 a {
 		url("/images/filmstrip/laff.jpg"), 
 		url("/images/filmstrip/oceangreen.jpg"), 
 		url("/images/filmstrip/picnic.jpg");
-	background-repeat: no-repeat;
 	background-position: 
 		0 bottom, 
 		108px bottom, 
@@ -80,6 +90,7 @@ h1 a {
 		432px bottom, 
 		540px bottom, 
 		648px bottom;
+	background-repeat: no-repeat;
 	padding-bottom: 67px;
 	margin-bottom: 4px;
 	width: 100%;
@@ -268,6 +279,7 @@ h2.origins {
 }
 h2.synopsis {
 	background: var(--main-orange) url("/images/title_synopsis.gif") 0px 0px no-repeat;
+	margin-top: 24px;
 	width: 86px;
 }
 h2.movies {
@@ -470,4 +482,189 @@ padding: 0 0 0 25px;
 }
 #footer ul li:last-child::before {
 	content:"\2022  ";
+}
+
+
+
+
+@media only screen and (max-width: 748px) {
+	:root {
+		--main-text-color: #333;
+	}
+
+	html {
+		height: 100%;
+	}
+
+	a.closenav, 
+	a.opennav {
+		color: var(--main-text-color);
+		display: initial;
+		font-size: 24px;
+		text-decoration: none;
+		top: 1vw;
+	}
+	a.opennav {
+		position: absolute;
+		left: 2.5vw;
+	}
+	a.closenav {
+		position: absolute;
+		right: 7px;
+	}
+
+	#navigation div {
+		background-color: #fff;
+		border: none;
+		border-radius: 0;
+		height: 100%;
+		left: -200px;
+		margin: 0;
+		overflow-x: hidden;
+		padding-top: 3.5vw;
+		position: fixed;
+		top: 0;
+		transition: 0.5s;
+		width: 200px;
+		z-index: 100;
+	}
+
+	#navigation div.shownav {
+		border-right: 2px solid var(--main-orange);
+		padding-right: 18px;
+		left: 0px;
+	}
+
+	body {
+		justify-content: flex-start;
+		margin-left: auto;
+		margin-right: auto;
+		width: 94%;
+	}
+
+	#content {
+		flex-flow: column wrap;
+		font-size: 12px;
+	}
+
+	.homepage #content, 
+	.subpage #content {
+		align-items: center;
+	}
+
+	.homepage .left_panel {
+		display: none;
+	}
+	.homepage .right_panel {
+		width: auto;
+	}
+	.subpage .left_panel, 
+	.subpage .right_panel, 
+	.subpage .single_panel {
+		margin-left: 0;
+		width: 90%;
+	}
+	.subpage #content > .right_panel {
+		margin-top: 24px;
+	}
+
+	#navigation ul {
+		align-items: flex-end;
+		flex-flow: column nowrap;
+		padding-right: 10px;
+		padding-top: 42px;
+	}
+	#navigation ul li {
+		background: none;
+		padding-left: 0;
+		padding-bottom: 20px;
+	}
+
+	.presslist.two_panel ul img {
+		display: block;
+	}
+	.presslist.two_panel .left_panel,
+	.presslist.two_panel .right_panel {
+		width: auto;
+	}
+	.presslist.two_panel .right_panel {
+		margin-left: 0;
+	}
+
+	.postcards1, 
+	.postcards2, 
+	.postcards3 {
+		width: auto;
+	}
+	.postcards1 img, 
+	.postcards2 img {
+		width: 100%;
+	}
+	.postcards3 a:first-of-type {
+		width: 40%;
+	}
+	.postcards3 p {
+		padding-left: 0;
+		width: 55%;
+	}
+
+	#postcard-mimi, 
+	#postcard-mimi:hover {
+		background-size: 75vw;
+		height: 49.95vw;
+		margin-left: auto;
+		margin-right: auto;
+		width: 75vw;
+	}
+}
+
+
+/* I should really redo the postcards3 page and not cram late-night CSS things in while on planes */
+
+@media only screen and (max-width: 660px) {
+	.postcards3 a:first-of-type {
+		width: 40%;
+	}
+}
+
+
+
+
+@media only screen and (max-width: 640px) {
+	.postcards3 p {
+		padding-left: 20px;
+	}
+}
+
+
+
+
+@media only screen and (max-width: 550px) {
+	.postcards3 a:first-of-type, 
+	.postcards3 p {
+		width: 100%;
+	}
+	.postcards3 p {
+		padding-left: 0;
+		padding-top: 10px;
+	}
+}
+
+
+
+
+@media only screen and (max-width: 430px) {
+/* background iamge is 430px wide, homepage h2 is 355px wide */
+	.homepage h2 {
+		background-size: 75%;
+		height: auto;
+	}
+	.homepage h1 {
+		margin-bottom: 0;
+		transform: scale(.75);
+	}
+	.presslist.two_panel {
+		flex-flow: column nowrap;
+	}
+
 }
