@@ -541,11 +541,19 @@ padding: 0 0 0 25px;
 		margin-right: auto;
 		width: 94%;
 	}
-
 	#content {
 		flex-flow: column wrap;
+	}
+
+	body, 
+	#content, 
+	#footer ul li a, 
+	h3.creditlist, 
+	h3.presslist,
+	h3.postcards {
 		font-size: 12px;
 	}
+
 
 	.homepage #content, 
 	.subpage #content {
@@ -616,6 +624,7 @@ padding: 0 0 0 25px;
 		margin-right: auto;
 		width: 75vw;
 	}
+
 }
 
 
